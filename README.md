@@ -45,7 +45,7 @@ This project involves designing and developing a shell interface that can suppor
 - **Assigned to**: Samuel Yoder
 
 ### Part 10: External Timeout Executable
-- **Responsibilities**: [Description]
+- **Responsibilities**: -
 - **Assigned to**: -
 
 ### Extra Credit
