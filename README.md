@@ -123,9 +123,9 @@ Document in-person meetings, their purpose, and what was discussed.
 
 
 ## Bugs
-- **Bug 1**: This is bug 1.
-- **Bug 2**: This is bug 2.
-- **Bug 3**: This is bug 3.
+- **Bug 1**: -
+- **Bug 2**: -
+- **Bug 3**: -
 
 ## Extra Credit
 - **Extra Credit 1**: Support unlimited number of pipes [2]
