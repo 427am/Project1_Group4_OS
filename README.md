@@ -3,54 +3,54 @@
 [Description]
 
 ## Group Members
-- **John Doe**: jd19@fsu.edu
-- **Jane Smith**: js19@fsu.edu
-- **Alex Brown**: ab19@fsu.edu
+- **Jaliah Meade**: jkm23c@fsu.edu
+- **Maddy Burns**: -@fsu.edu
+- **Samuel Yoder**: -@fsu.edu
 ## Division of Labor
 
 ### Part 1: Prompt
 - **Responsibilities**: [Description]
-- **Assigned to**: John Doe
+- **Assigned to**: Jaliah Meade
 
 ### Part 2: Environment Variables
 - **Responsibilities**: [Description]
-- **Assigned to**: Jane Smith
+- **Assigned to**: Jaliah Meade
 
 ### Part 3: Tilde Expansion
 - **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown
+- **Assigned to**: Jaliah Meade
 
 ### Part 4: $PATH Search
 - **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown, Jane Smith
+- **Assigned to**: Maddy Burns
 
 ### Part 5: External Command Execution
 - **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown, Jane Smith
+- **Assigned to**: Maddy Burns
 
 ### Part 6: I/O Redirection
 - **Responsibilities**: [Description]
-- **Assigned to**: Jane Smith
+- **Assigned to**: Maddy Burns
 
 ### Part 7: Piping
 - **Responsibilities**: [Description]
-- **Assigned to**: John Doe
+- **Assigned to**: Maddy Burns
 
 ### Part 8: Background Processing
 - **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown, John Doe
+- **Assigned to**: Samuel Yoder
 
 ### Part 9: Internal Command Execution
 - **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown
+- **Assigned to**: Samuel Yoder
 
 ### Part 10: External Timeout Executable
 - **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown, Jane Smith
+- **Assigned to**: Samuel Yoder
 
 ### Extra Credit
 - **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown
+- **Assigned to**: -
 
 ## File Listing
 ```
