@@ -91,9 +91,9 @@ Each member records their contributions here.
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
-| 2025-09-12 | [Description of task]  |
-| 2025-09-14 | [Description of task]  |
-| 2025-09-19 | [Description of task]  |
+| 2025-09-12 | Set up local project in VS Code, added starter files, and implemented the prompt users are greeted with  |
+| 2025-09-14 | Began to implement environment variable expansion and analyzed starter file to understand its logic|
+| 2025-09-19 | Finished implementing environment variables, implemented tilde expansion, and tested code on linprog|
 
 ### Maddy Burns
 
@@ -133,4 +133,4 @@ Document in-person meetings, their purpose, and what was discussed.
 - **Extra Credit 3**: Shell-ception: Execute your shell from within a running shell process repeatedly [1]
 
 ## Considerations
-[Description]
+- Confirm that tilde and environment variable expansions work consistently across commands.
