@@ -5,7 +5,7 @@ This project involves designing and developing a shell interface that can suppor
 ## Group Members
 - **Jaliah Meade**: jkm23c@fsu.edu
 - **Maddy Burns**: -@fsu.edu
-- **Samuel Yoder**: -@fsu.edu
+- **Samuel Yoder**: sdy22@fsu.edu
 ## Division of Labor
 
 ### Part 1: Prompt
