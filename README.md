@@ -9,15 +9,15 @@
 ## Division of Labor
 
 ### Part 1: Prompt
-- **Responsibilities**: [Description]
+- **Responsibilities**: Display a prompt showing the current user, machine, and working directory
 - **Assigned to**: Jaliah Meade
 
 ### Part 2: Environment Variables
-- **Responsibilities**: [Description]
+- **Responsibilities**: Expand tokens starting with $ to their corresponding environment variable values
 - **Assigned to**: Jaliah Meade
 
 ### Part 3: Tilde Expansion
-- **Responsibilities**: [Description]
+- **Responsibilities**: Replace ~ or ~/ with the user's home directory path
 - **Assigned to**: Jaliah Meade
 
 ### Part 4: $PATH Search
@@ -91,9 +91,9 @@ Each member records their contributions here.
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
-| 2025-09-DD | [Description of task]  |
-| 2025-09-DD | [Description of task]  |
-| 2025-09-DD | [Description of task]  |
+| 2025-09-10 | [Description of task]  |
+| 2025-09-14 | [Description of task]  |
+| 2025-09-19 | [Description of task]  |
 
 ### Maddy Burns
 
