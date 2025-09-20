@@ -87,30 +87,30 @@ This will run the program ...
 ## Development Log
 Each member records their contributions here.
 
-### [Member 1]
+### Jaliah Meade
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
+| 2025-09-DD | [Description of task]  |
+| 2025-09-DD | [Description of task]  |
+| 2025-09-DD | [Description of task]  |
 
-### [Member 2]
-
-| Date       | Work Completed / Notes |
-|------------|------------------------|
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
-
-
-### [Member 3]
+### Maddy Burns
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
+| 2025-09-DD | [Description of task]  |
+| 2025-09-DD | [Description of task]  |
+| 2025-09-DD | [Description of task]  |
+
+
+### Samuel Yoder
+
+| Date       | Work Completed / Notes |
+|------------|------------------------|
+| 2025-09-DD | [Description of task]  |
+| 2025-09-DD | [Description of task]  |
+| 2025-09-DD | [Description of task]  |
 
 
 ## Meetings
@@ -118,9 +118,8 @@ Document in-person meetings, their purpose, and what was discussed.
 
 | Date       | Attendees            | Topics Discussed | Outcomes / Decisions |
 |------------|----------------------|------------------|-----------------------|
-| YYYY-MM-DD | [Names]              | [Agenda items]   | [Actions/Next steps]  |
-| YYYY-MM-DD | [Names]              | [Agenda items]   | [Actions/Next steps]  |
-
+| 2025-09-DD | Jaliah, Maddy, Samuel| [Agenda items]   | [Actions/Next steps]  |
+| 2025-09-DD | Jaliah, Maddy, Samuel| [Agenda items]   | [Actions/Next steps]  |
 
 
 ## Bugs
