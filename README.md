@@ -129,8 +129,8 @@ Document in-person meetings, their purpose, and what was discussed.
 
 ## Extra Credit
 - **Extra Credit 1**: Support unlimited number of pipes [2]
-- **Extra Credit 2**: [Extra Credit Option]
-- **Extra Credit 3**: [Extra Credit Option]
+- **Extra Credit 2**: Support piping and I/O redirection in a single command [2]
+- **Extra Credit 3**: Shell-ception: Execute your shell from within a running shell process repeatedly [1]
 
 ## Considerations
 [Description]
