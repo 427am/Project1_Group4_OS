@@ -1,6 +1,6 @@
 # Shell
 
-[Description]
+This project involves designing and developing a shell interface that can support features including but not limited to environment variable expansion, $PATH command lookup, and I/O redirection. The project emphasizes command-line parsing, user iteraction, and error-handling. 
 
 ## Group Members
 - **Jaliah Meade**: jkm23c@fsu.edu
@@ -91,7 +91,7 @@ Each member records their contributions here.
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
-| 2025-09-10 | [Description of task]  |
+| 2025-09-12 | [Description of task]  |
 | 2025-09-14 | [Description of task]  |
 | 2025-09-19 | [Description of task]  |
 
@@ -118,8 +118,8 @@ Document in-person meetings, their purpose, and what was discussed.
 
 | Date       | Attendees            | Topics Discussed | Outcomes / Decisions |
 |------------|----------------------|------------------|-----------------------|
-| 2025-09-DD | Jaliah, Maddy, Samuel| [Agenda items]   | [Actions/Next steps]  |
-| 2025-09-DD | Jaliah, Maddy, Samuel| [Agenda items]   | [Actions/Next steps]  |
+| 2025-09-12 | Jaliah, Maddy, Samuel| Current progress made  | [Actions/Next steps]  |
+| 2025-09-19 | Jaliah, Maddy, Samuel| Finalizing the timeline of completion  | [Actions/Next steps]  |
 
 
 ## Bugs
