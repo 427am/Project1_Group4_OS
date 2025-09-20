@@ -91,7 +91,7 @@ Each member records their contributions here.
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
-| 2025-09-12 | Set up local project in VS Code, added starter files, and implemented the prompt users are greeted with  |
+| 2025-09-10 | Set up local project in VS Code, added starter files, and implemented the prompt users are greeted with  |
 | 2025-09-14 | Began to implement environment variable expansion and analyzed starter file to understand its logic|
 | 2025-09-19 | Finished implementing environment variables, implemented tilde expansion, and tested code on linprog|
 
