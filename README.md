@@ -46,11 +46,11 @@ This project involves designing and developing a shell interface that can suppor
 
 ### Part 10: External Timeout Executable
 - **Responsibilities**: [Description]
-- **Assigned to**: Samuel Yoder
+- **Assigned to**: -
 
 ### Extra Credit
 - **Responsibilities**: [Description]
-- **Assigned to**: -
+- **Assigned to**: Jaliah Meade, Maddy Burns, Samuel Yoder
 
 ## File Listing
 ```
@@ -118,8 +118,8 @@ Document in-person meetings, their purpose, and what was discussed.
 
 | Date       | Attendees            | Topics Discussed | Outcomes / Decisions |
 |------------|----------------------|------------------|-----------------------|
-| 2025-09-12 | Jaliah, Maddy, Samuel| Current progress made  | [Actions/Next steps]  |
-| 2025-09-19 | Jaliah, Maddy, Samuel| Finalizing the timeline of completion  | [Actions/Next steps]  |
+| 2025-09-12 | Jaliah, Maddy, Samuel| Current progress made  | Continue implementing shell features |
+| 2025-09-19 | Jaliah, Maddy, Samuel| Finalizing the timeline of completion  | Parts 1-9 will be finished separately by Sep. 26, then extra credit will be worked on together  |
 
 
 ## Bugs
