@@ -3,6 +3,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* helper to safely replace a token by duplicating the new value (or empty) and freeing the old one
+ * (prevents freeing getenv() pointers and fixes leaks when we change a token)
+ */
+static void replace_token(tokenlist *tokens, int i, const char *newval) {
+	char *old = tokens->items[i];  // keep old heap string
+	char *dup = strdup(newval ? newval : "");  // duplicate new value; empty if NULL
+	tokens->items[i] = dup;  // install the safe, heap-allocated copy
+	free(old);  // free the old token we owned
+}
+
 int main()
 {
 	while (1) { // keeps running until the user manually exits 
@@ -28,13 +38,17 @@ int main()
 		{
 			if(tokens->items[i][0] == '$')	// checks if token is prefixed with a "$"
 			{
-				char *var = getenv(tokens->items[i]+ 1); // determines expanded value of token
-				if(var != NULL)
-				{
-					char *var_cpy = malloc(strlen(var) + 1); // allocates memory for pointer so it can be freed later 
-    				strcpy(var_cpy, var); // makes a copy of expanded token
-					tokens->items[i] = var_cpy; // replaces token with expanded value 
-				}		
+				// char *var = getenv(tokens->items[i]+ 1); // determines expanded value of token
+				// if(var != NULL)
+				// {
+				// 	char *var_cpy = malloc(strlen(var) + 1); // allocates memory for pointer so it can be freed later 
+    			// 	strcpy(var_cpy, var); // makes a copy of expanded token
+				// 	tokens->items[i] = var_cpy; // replaces token with expanded value 
+				// }		
+				/* fix: expand whole-argument $name; if unset, use empty string; always replace safely to avoid leaks */
+				const char *name = tokens->items[i] + 1; // skip '$'
+				const char *val = getenv(name); // may be NULL
+				replace_token(tokens, i, val); // handles NULL->"" and frees old token
 			}
 		}
 
@@ -44,15 +58,30 @@ int main()
 			char *home = getenv("HOME"); // determines path
 			if(strcmp(tokens->items[i], "~") == 0) // standalone option
 			{
-				tokens->items[i] = home;
+				// tokens->items[i] = home;
+				/* fix: never store getenv pointer directly; duplicate it and free the old token */
+				replace_token(tokens, i, home /* may be NULL -> becomes "" */);
 			}
 			else if(tokens->items[i][0] == '~' && tokens->items[i][1] == '/') // starts with ~/ option
 			{
 				char *rest = tokens->items[i] + 1; // everything after the ~
-				char *final = malloc(strlen(home) + strlen(rest) + 1); // allocates for size of final expanded version
-				strcpy(final, home); // transfers home path to final
-				strcat(final, rest); // concatenates everything after the ~ to the home path
-				tokens->items[i] = final; // replaces token with expanded value
+				// char *final = malloc(strlen(home) + strlen(rest) + 1); // allocates for size of final expanded version
+				// strcpy(final, home); // transfers home path to final
+				// strcat(final, rest); // concatenates everything after the ~ to the home path
+				// tokens->items[i] = final; // replaces token with expanded value
+				/* fix: build final string safely, then replace token (free old) and free temporary;
+				 * if $HOME is NULL, a reasonable fallback is to drop '~' so it becomes "/...".
+				 */
+				if (home) {
+					size_t need = strlen(home) + strlen(rest) + 1;
+					char *final = (char *)malloc(need);
+					strcpy(final, home);
+					strcat(final, rest);
+					replace_token(tokens, i, final); // installs a dup and frees old
+					free(final); // free temporary buffer
+				} else {
+					replace_token(tokens, i, rest); // becomes "/..." if home is unset
+				}
 			}
 		}
 
