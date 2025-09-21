@@ -45,7 +45,7 @@ int main()
     			// 	strcpy(var_cpy, var); // makes a copy of expanded token
 				// 	tokens->items[i] = var_cpy; // replaces token with expanded value 
 				// }		
-				/* fix: expand whole-argument $name; if unset, use empty string; always replace safely to avoid leaks */
+				/* fix: expand whole-argument $name; if unset, use empty string */
 				const char *name = tokens->items[i] + 1; // skip '$'
 				const char *val = getenv(name); // may be NULL
 				replace_token(tokens, i, val); // handles NULL->"" and frees old token
@@ -69,8 +69,7 @@ int main()
 				// strcpy(final, home); // transfers home path to final
 				// strcat(final, rest); // concatenates everything after the ~ to the home path
 				// tokens->items[i] = final; // replaces token with expanded value
-				/* fix: build final string safely, then replace token (free old) and free temporary;
-				 * if $HOME is NULL, a reasonable fallback is to drop '~' so it becomes "/...".
+				/* fix: building final string safely, then replacing token (free old) and free temporary.
 				 */
 				if (home) {
 					size_t need = strlen(home) + strlen(rest) + 1;
