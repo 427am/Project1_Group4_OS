@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <limits.h>
+#include <errno.h>
 
 int main()
 {
@@ -60,11 +65,85 @@ int main()
 			printf("token %d: (%s)\n", i, tokens->items[i]); // prints each token with its index
 		}
 
+		run_command(tokens); // execute command for redirection
+
 		free(input); // frees memory from input string
 		free_tokens(tokens); // calls helper function that frees memory from token list
 	}
 
 	return 0;
+}
+
+
+char *find_command(char *command) { // function to find full path of command
+	if (strchr(command, '/')) { // if the command has '/' in it, treat it as a path
+		return command;	// return the command unchanged
+	}
+
+	char *path_env = getenv("PATH"); // get PATH env variable
+	if (path_env == NULL) return NULL; // do not continue if there is no PATH env variable
+
+	char *path_copy = strdup(path_env); // duplicate the path so the orignal is not destroyed
+	char *dir = strtok(path_copy, ':'); // each dir in PATH is seperated by colons
+	static char full_path[512]; // placeholder to build dir/cmd
+
+	while (dir != NULL) { // go through each dir in PATH
+		snprintf(full_path, sizeof(full_path), "%s/%s", dir, command); // create string 
+
+		if (access(full_path, X_OK) == 0) { // check if the file exists and if it is executable
+			free(path_copy); // destroy copied path
+			return full_path; // return the working full path
+		}
+
+		dir = strtok(NULL, ":"); // otherwise check next directory
+	}
+
+	// if nothing is found, destroy copy and return NULL
+	free(path_copy);
+	return NULL;
+}
+
+void run_command(tokenlist *tokens) {
+	if (tokens->size == 0) return; // nothing to run, just return to exit function
+
+	// file descriptors for input and output redirecting 
+	int in_fd = -1;
+	int out_fd = -1;
+
+	// loop through tokens to check for input and output (< or >)
+	for (int i = 0; i<tokens->size; i++) {
+		if (strcmp(tokens->items[i], ">") == 0 && i + 1 < tokens->size) {
+			out_fd = open(tokens->items[i+1], O_CREAT | O_WRONLY | O_TRUNC, 0600); // open file for writing, create file if it does not exist, or overwrite a existing file
+			if (out_fd < 0) { perror("open"); return;} // if there is error opening file, stop function
+			tokens->items[i] = NULL; // end args here so execv know to stop
+			break; // only do first output redirect 
+		}
+		if (strcmp(tokens->items[i], "<") == 0 && i + 1 < tokens->size) {
+			in_fd = open(tokens->items[i+1], O_RDONLY); // open file for reading only
+			if (in_fd < 0) { perror("open"); return;} // if there is error opening file, stop function
+			tokens->items[i] = NULL; // stop args here
+			break; // only do first input redirect
+		}
+	}
+
+	char *cmd_path = find_command(tokens->items[0]); // find full path of command using PATH
+	if (!cmd_path) { // if command path was not found
+		printf("Command not found: %s\n", toeksn->items[0]);
+		return; // exit function
+	}
+
+	pid_t pid = fork(); // create a new process
+	if (pid == 0) { //child process
+		if (in_fd != -1) { dup2(in_fd, STDIN_FILENO); close(in_fd);} // redirect stdin if needed
+		if (out_fd != -1) { dup2(out_fd, STDOUT_FILENO); close(out_fd); } //redirect stdout if needed
+		execv(cmd_path, tokens->items); // execute the command
+		perror("execv failed"); // if execv fails, print error
+		exit(1); // terminate child process
+	} else if (pid > 0) {
+		waitpid(pid, NULL, 0); // wait for child to finish
+	} else { // fork fails
+		perror("fork failed"); // print error
+	}
 }
 
 char *get_input(void) { // helper function called on line 21

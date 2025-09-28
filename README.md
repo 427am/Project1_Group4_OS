@@ -4,7 +4,7 @@ This project involves designing and developing a shell interface that can suppor
 
 ## Group Members
 - **Jaliah Meade**: jkm23c@fsu.edu
-- **Maddy Burns**: -@fsu.edu
+- **Maddy Burns**: mrb23g@fsu.edu
 - **Samuel Yoder**: sdy22@fsu.edu
 ## Division of Labor
 
@@ -21,15 +21,15 @@ This project involves designing and developing a shell interface that can suppor
 - **Assigned to**: Jaliah Meade
 
 ### Part 4: $PATH Search
-- **Responsibilities**: [Description]
+- **Responsibilities**: Search through the folders listed in the $PATH variable to find where the command is stored
 - **Assigned to**: Maddy Burns
 
 ### Part 5: External Command Execution
-- **Responsibilities**: [Description]
+- **Responsibilities**: Run programs entered by the user by creating a new process for each
 - **Assigned to**: Maddy Burns
 
 ### Part 6: I/O Redirection
-- **Responsibilities**: [Description]
+- **Responsibilities**: Allow commands to read input from a file or send outputs to a file
 - **Assigned to**: Maddy Burns
 
 ### Part 7: Piping
