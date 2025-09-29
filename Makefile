@@ -10,7 +10,7 @@ DIRS := $(OBJ)/ $(BIN)/
 EXEC := $(BIN)/$(EXECUTABLE)
 
 CC := gcc
-CFLAGS := -g -Wall -std=c99 $(INCS)
+CFLAGS := -g -Wall -std=c99 -D_POSIX_C_SOURCE=200809L $(INCS)
 LDFLAGS :=
 
 all: $(EXEC)
@@ -25,8 +25,9 @@ run: $(EXEC)
 	$(EXEC)
 
 clean:
-	rm $(OBJ)/*.o $(EXEC)
+	-@rm -f obj/*.o bin/shell 2>/dev/null || true
 
 $(shell mkdir -p $(DIRS))
 
 .PHONY: run clean all
+
