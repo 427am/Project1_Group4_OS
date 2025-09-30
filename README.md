@@ -54,7 +54,6 @@ This project involves designing and developing a shell interface that can suppor
 shell/
 │
 ├── src/
-│   ├── main.c
 │   └── lexer.c
 │
 ├── include/
